@@ -74,38 +74,38 @@ public class StarResult {
         }
 
         System.out.println("Train");
-        if (trainKm < aRoute) {
+        if (trainKm <= aRoute) {
             System.out.println(riga.getStartPoint() + " to " + sigulda.getEndPoint() + " Not enough fuel to take a ride");
         } else {
             System.out.println(riga.getStartPoint() + " to " + sigulda.getEndPoint() + " Enjoy Your journey!");
         }
 
-        if (trainKm < bRoute) {
+        if (trainKm <= bRoute) {
             System.out.println(riga.getStartPoint() + " to " + berlin.getEndPoint() + " Not enough fuel to take a ride");
         } else {
             System.out.println(riga.getStartPoint() + " to " + berlin.getEndPoint() + " Enjoy Your journey!");
         }
 
-        if (trainKm < cRoute) {
+        if (trainKm <= cRoute) {
             System.out.println(riga.getStartPoint() + " to " + madrid.getEndPoint() + " Not enough fuel to take a ride");
         } else {
             System.out.println(riga.getStartPoint() + " to " + madrid.getEndPoint() + " Enjoy Your journey!");
         }
 
         System.out.println("Plane");
-        if (plainKm < aRoute) {
+        if (plainKm <= aRoute) {
             System.out.println(riga.getStartPoint() + " to " + sigulda.getEndPoint() + " Not enough fuel to take a ride");
         } else {
             System.out.println(riga.getStartPoint() + " to " + sigulda.getEndPoint() + " Enjoy Your journey!");
         }
 
-        if (plainKm < bRoute) {
+        if (plainKm <= bRoute) {
             System.out.println(riga.getStartPoint() + " to " + berlin.getEndPoint() + " Not enough fuel to take a ride");
         } else {
             System.out.println(riga.getStartPoint() + " to " + berlin.getEndPoint() + " Enjoy Your journey!");
         }
 
-        if (plainKm < cRoute) {
+        if (plainKm <= cRoute) {
             System.out.println(riga.getStartPoint() + " to " + madrid.getEndPoint() + " Not enough fuel to take a ride");
         } else {
             System.out.println(riga.getStartPoint() + " to " + madrid.getEndPoint() + " Enjoy Your journey!");
