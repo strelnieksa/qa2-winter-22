@@ -2,7 +2,7 @@ package homework10Objects;
 
 import org.junit.jupiter.api.Test;
 
-public class AllMyObjects {
+public class AllMyObjectsTest {
     @Test
     public void workingWithAllMyObjectsInHomework() {
         BluetoothSpeaker firstBluetoothSpeaker = new BluetoothSpeaker();

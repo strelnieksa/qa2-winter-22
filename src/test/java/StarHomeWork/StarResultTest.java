@@ -2,7 +2,7 @@ package StarHomeWork;
 
 import org.junit.jupiter.api.Test;
 
-public class StarResult {
+public class StarResultTest {
     @Test
     public void workingWithStarredHomeWork() {
 
