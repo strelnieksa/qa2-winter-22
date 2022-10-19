@@ -1,4 +1,4 @@
-package homework1;
+package homework10Objects;
 
 public class DeskLamp {
 

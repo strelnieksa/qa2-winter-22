@@ -1,14 +1,15 @@
-package homework1;
+package homework10Objects;
 
-public class Keyboard {
+public class WirelessMouse {
 
     private float width;
     private float height;
     private float depth;
-    private boolean touchpad;
+    private boolean mouseWheel;
+    private boolean isSingleColor;
     private String color;
-    private String keyboardLayout;
     private String brand;
+
     private String model;
 
     //---------------GETTERS/SETTERS----------------
@@ -38,12 +39,20 @@ public class Keyboard {
         this.depth = depth;
     }
 
-    public boolean isTouchpad() {
-        return touchpad;
+    public boolean isMouseWheel() {
+        return mouseWheel;
     }
 
-    public void setTouchpad(boolean touchpad) {
-        this.touchpad = touchpad;
+    public void setMouseWheel(boolean mouseWheel) {
+        this.mouseWheel = mouseWheel;
+    }
+
+    public boolean isSingleColor() {
+        return isSingleColor;
+    }
+
+    public void setSingleColor(boolean singleColor) {
+        isSingleColor = singleColor;
     }
 
     public String getColor() {
@@ -52,14 +61,6 @@ public class Keyboard {
 
     public void setColor(String color) {
         this.color = color;
-    }
-
-    public String getKeyboardLayout() {
-        return keyboardLayout;
-    }
-
-    public void setKeyboardLayout(String keyboardLayout) {
-        this.keyboardLayout = keyboardLayout;
     }
 
     public String getBrand() {
