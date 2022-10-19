@@ -55,19 +55,19 @@ public class StarResult {
 
 
         System.out.println("Car");
-        if (carKm < aRoute) {
+        if (carKm <= aRoute) {
             System.out.println(riga.getStartPoint() + " to " + sigulda.getEndPoint() + " Not enough fuel to take a ride");
         } else {
             System.out.println(riga.getStartPoint() + " to " + sigulda.getEndPoint() + " Enjoy Your journey!");
         }
 
-        if (carKm < bRoute) {
+        if (carKm <= bRoute) {
             System.out.println(riga.getStartPoint() + " to " + berlin.getEndPoint() + " Not enough fuel to take a ride");
         } else {
             System.out.println(riga.getStartPoint() + " to " + berlin.getEndPoint() + " Enjoy Your journey!");
         }
 
-        if (carKm < cRoute) {
+        if (carKm <= cRoute) {
             System.out.println(riga.getStartPoint() + " to " + madrid.getEndPoint() + " Not enough fuel to take a ride");
         } else {
             System.out.println(riga.getStartPoint() + " to " + madrid.getEndPoint() + " Enjoy Your journey!");
