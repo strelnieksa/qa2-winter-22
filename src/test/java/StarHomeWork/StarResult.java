@@ -72,7 +72,7 @@ public class StarResult {
         } else {
             System.out.println(riga.getStartPoint() + " to " + madrid.getEndPoint() + " Enjoy Your journey!");
         }
-
+        System.out.println();
         System.out.println("Train");
         if (trainKm <= aRoute) {
             System.out.println(riga.getStartPoint() + " to " + sigulda.getEndPoint() + " Not enough fuel to take a ride");
@@ -91,7 +91,7 @@ public class StarResult {
         } else {
             System.out.println(riga.getStartPoint() + " to " + madrid.getEndPoint() + " Enjoy Your journey!");
         }
-
+        System.out.println();
         System.out.println("Plane");
         if (plainKm <= aRoute) {
             System.out.println(riga.getStartPoint() + " to " + sigulda.getEndPoint() + " Not enough fuel to take a ride");
@@ -112,15 +112,12 @@ public class StarResult {
         }
 
 
-
-
-
-        System.out.println(carKm);
-        System.out.println(trainKm);
-        System.out.println(plainKm);
-        System.out.println(aRoute);
-        System.out.println(bRoute);
-        System.out.println(cRoute);
+//        System.out.println(carKm);
+//        System.out.println(trainKm);
+//        System.out.println(plainKm);
+//        System.out.println(aRoute);
+//        System.out.println(bRoute);
+//        System.out.println(cRoute);
 
     }
 
