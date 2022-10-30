@@ -32,7 +32,5 @@ public class StarSeleniumTest {
 
         browser.findElement(By.className("tl-container")).findElement(By.linkText("Latvia")).click();
 
-
-
     }
 }
