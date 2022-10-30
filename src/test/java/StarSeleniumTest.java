@@ -26,7 +26,6 @@ public class StarSeleniumTest {
 
         browser.findElement(ACCEPT_COOKIES_BTN).click();
 
-
         //Strādā gan aizkomentētā saite, gan apakšējā saite
         //browser.findElement(By.linkText("Latvia")).click();
 
