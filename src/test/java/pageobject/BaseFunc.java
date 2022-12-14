@@ -38,4 +38,14 @@ public class BaseFunc {
     public void click(By locator) {
         wait.until(ExpectedConditions.elementToBeClickable(locator)).click();
     }
+
+    public void fillReservationForm(By locator, String inputData) {
+        WebElement we = wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+        we.clear();
+        we.sendKeys(inputData);
+    }
+
+    public void fillReservationForm(By locator, int number){
+
+    }
 }
