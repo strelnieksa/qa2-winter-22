@@ -128,24 +128,13 @@ public class TicketsHomework {
         wait.until(ExpectedConditions.elementToBeClickable(BOOK3)).click();
 
         String thankYou = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//div[@class = 'finalTxt']"))).getText();
-        if (thankYou.contains("Thank")){
+        if (thankYou.contains("Thank")) {
             System.out.println("Thank You Homework Done!");
-        }
-        else {
+        } else {
             System.out.println("Reservation failed!!!");
         }
-//
-//        //šis ir upload no Lenovo Pc !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//        !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//        !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!ARE YOU OK !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//        !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//        !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//        !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-
 
     }
-
 
     private void flightSelect(By locator, String infoData) {
         WebElement we = wait.until(ExpectedConditions.presenceOfElementLocated(locator));
