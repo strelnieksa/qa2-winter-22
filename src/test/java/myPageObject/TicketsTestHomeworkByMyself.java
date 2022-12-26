@@ -34,6 +34,8 @@ public class TicketsTestHomeworkByMyself {
         MyPricePage myPricePage = new MyPricePage(basicFunctions);
         myPricePage.bookPrice();
         //basicFunctions.click(By.id("book2"));
+        //taisam upload
+
 
 
 
