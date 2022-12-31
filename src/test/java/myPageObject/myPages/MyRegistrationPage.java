@@ -28,7 +28,7 @@ public class MyRegistrationPage {
         basicFunctions.type(CHILDREN, myPassenger.getChildCount());
         basicFunctions.type(BUGS, myPassenger.getBagCount());
         basicFunctions.selectByText(FLIGHT, myPassenger.getDate());
-        //basicFunctions.click(GET_PRICE);
+        basicFunctions.click(GET_PRICE);
     }
 
 }

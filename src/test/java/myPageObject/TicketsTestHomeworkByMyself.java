@@ -1,9 +1,8 @@
 package myPageObject;
 
 import myPageObject.myModel.MyPassenger;
-import myPageObject.myPages.MyHomePage;
-import myPageObject.myPages.MyPricePage;
-import myPageObject.myPages.MyRegistrationPage;
+import myPageObject.myPages.*;
+import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 
@@ -11,6 +10,8 @@ public class TicketsTestHomeworkByMyself {
     private final String URL = "www.qaguru.lv:8089/tickets";
     final private String FROM_AIRPORT = "VVO";
     final private String TO_AIRPORT = "TNR";
+    final private String SEAT_NUMBER = "27";
+    final private By AFTER_GETTING_PRICE = By.xpath(".//span[@class = 'bTxt']");
 
     private MyPassenger pasazhieris = new MyPassenger("Alinax", "De May Day",
             "Start1", 1, 0, 3,
@@ -32,12 +33,18 @@ public class TicketsTestHomeworkByMyself {
         registration.fillRegistrationData(pasazhieris);
 
         MyPricePage myPricePage = new MyPricePage(basicFunctions);
+        myPricePage.assertGetPriceData(pasazhieris.getFirstName(),FROM_AIRPORT, TO_AIRPORT);
+        myPricePage.priceAvailabilityCheck();
         myPricePage.bookPrice();
-        //basicFunctions.click(By.id("book2"));
-        //taisam upload
 
+        MySeatPage seatPage = new MySeatPage(basicFunctions);
+        seatPage.chooseSeatNumber(SEAT_NUMBER);
 
+        MyChoosenSeatPage myChoosenSeatPage = new MyChoosenSeatPage(basicFunctions);
+        myChoosenSeatPage.assertSeat(SEAT_NUMBER);
 
+        MySuccesfulReservationPage end = new MySuccesfulReservationPage(basicFunctions);
+        end.succesfulEndingCheck();
 
     }
 }

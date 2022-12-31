@@ -1,5 +1,6 @@
 package myPageObject;
 
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -72,7 +73,30 @@ public class BasicFunctions {
         }
     }
 
+    public String getListWebElementText(By locator, int elementsMoreThan, int index){
+        List<WebElement> we = wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(locator,elementsMoreThan));
+        return we.get(index).getText();
+    }
+    public String getWebElementText(By locator){
+        return browser.findElement(locator).getText();
+    }
+
     public void loadElements(By locator, int number){
         wait.until(ExpectedConditions.numberOfElementsToBe(locator, number));
+    }
+    public void loadElementsMoreThan(By locator, int number){
+        wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(locator, number));
+    }
+
+    public void assertEquals(String firstText, String secondText){
+        Assertions.assertEquals(firstText, secondText, "Nav Vienādi!!!");
+    }
+
+    public void assertEquals(int firstInt, int secondInt){
+        assertEquals(String.valueOf(firstInt), String.valueOf(secondInt));
+    }
+
+    public void visibilityOfElementLocated(By locator){
+        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 }
