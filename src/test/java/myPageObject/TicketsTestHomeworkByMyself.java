@@ -11,7 +11,6 @@ public class TicketsTestHomeworkByMyself {
     final private String FROM_AIRPORT = "VVO";
     final private String TO_AIRPORT = "TNR";
     final private String SEAT_NUMBER = "27";
-    final private By AFTER_GETTING_PRICE = By.xpath(".//span[@class = 'bTxt']");
 
     private MyPassenger pasazhieris = new MyPassenger("Alinax", "De May Day",
             "Start1", 1, 0, 3,
