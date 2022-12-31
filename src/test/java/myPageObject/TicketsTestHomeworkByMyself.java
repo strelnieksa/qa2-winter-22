@@ -16,7 +16,7 @@ public class TicketsTestHomeworkByMyself {
             "Start1", 1, 0, 3,
             "14-05-2018");
     private MyPassenger pasazhieris2 = new MyPassenger("Kartula", "Apadigo",
-            "Strateris ggogogog", 2, 2, 5,
+            "Strategija 888", 2, 2, 5,
             "14-05-2018");
     private BasicFunctions basicFunctions = new BasicFunctions();
 
