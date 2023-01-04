@@ -10,7 +10,7 @@ public class TicketsTestHomeworkByMyself {
     private final String URL = "www.qaguru.lv:8089/tickets";
     final private String FROM_AIRPORT = "VVO";
     final private String TO_AIRPORT = "TNR";
-    final private String SEAT_NUMBER = "27";
+    final private int SEAT_NUMBER = 27;
 
     private MyPassenger pasazhieris = new MyPassenger("Alinax", "De May Day",
             "Start1", 1, 0, 3,

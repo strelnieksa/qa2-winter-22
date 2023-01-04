@@ -12,9 +12,10 @@ public class MyChoosenSeatPage {
         this.basicFunctions = basicFunctions;
     }
 
-    public void assertSeat(String seat){
-        basicFunctions.assertEquals(seat,StringUtils.getDigits(basicFunctions.getWebElementText(SEAT_CHECK)));
-        System.out.println("Izvēlētā vieta: " + seat + "\n" + "Rezervētā vieta: " + StringUtils.getDigits(basicFunctions.getWebElementText(SEAT_CHECK)));
+    public void assertSeat(int seat){
+        int seatCheck = Integer.parseInt(StringUtils.getDigits(basicFunctions.getWebElementText(SEAT_CHECK)));
+        basicFunctions.assertEquals(seat,seatCheck);
+        System.out.println("Izvēlētā vieta: " + seat + "\n" + "Rezervētā vieta: " + seatCheck);
         basicFunctions.click(By.id("book3"));
     }
 

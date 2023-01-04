@@ -47,6 +47,10 @@ public class BasicFunctions {
         wait.until(ExpectedConditions.elementToBeClickable(locator)).click();
     }
 
+    public void click(WebElement we) {
+        wait.until(ExpectedConditions.elementToBeClickable(we)).click();
+    }
+
     public void type(By locator, String inputData) {
         WebElement we = wait.until(ExpectedConditions.presenceOfElementLocated(locator));
         we.clear();
@@ -73,30 +77,32 @@ public class BasicFunctions {
         }
     }
 
-    public String getListWebElementText(By locator, int elementsMoreThan, int index){
-        List<WebElement> we = wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(locator,elementsMoreThan));
+    public String getListWebElementText(By locator, int elementsMoreThan, int index) {
+        List<WebElement> we = wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(locator, elementsMoreThan));
         return we.get(index).getText();
     }
-    public String getWebElementText(By locator){
+
+    public String getWebElementText(By locator) {
         return browser.findElement(locator).getText();
     }
 
-    public void loadElements(By locator, int number){
+    public void loadElements(By locator, int number) {
         wait.until(ExpectedConditions.numberOfElementsToBe(locator, number));
     }
-    public void loadElementsMoreThan(By locator, int number){
+
+    public void loadElementsMoreThan(By locator, int number) {
         wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(locator, number));
     }
 
-    public void assertEquals(String firstText, String secondText){
+    public void assertEquals(String firstText, String secondText) {
         Assertions.assertEquals(firstText, secondText, "Nav Vienādi!!!");
     }
 
-    public void assertEquals(int firstInt, int secondInt){
+    public void assertEquals(int firstInt, int secondInt) {
         assertEquals(String.valueOf(firstInt), String.valueOf(secondInt));
     }
 
-    public void visibilityOfElementLocated(By locator){
+    public void visibilityOfElementLocated(By locator) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 }

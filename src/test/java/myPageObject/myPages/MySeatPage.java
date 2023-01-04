@@ -12,9 +12,9 @@ public class MySeatPage {
         this.basicFunctions = basicFunctions;
     }
 
-    public void chooseSeatNumber(String seatNumber){
+    public void chooseSeatNumber(int seatNumber){
        basicFunctions.loadElements(LOAD_SEATS, ALL_SEATS);
-       basicFunctions.chooseWebElement(LOAD_SEATS, seatNumber);
+       basicFunctions.chooseWebElement(LOAD_SEATS, String.valueOf(seatNumber));
     }
 
 }
