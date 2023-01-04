@@ -19,18 +19,24 @@ public class MyPricePage {
     }
 
     public void assertGetPriceData(String name, String from, String to) {
-        basicFunctions.assertEquals(basicFunctions.getListWebElementText(AFTER_GETTING_PRICE, 3, 0), basicFunctions.getListWebElementText(AFTER_GETTING_PRICE, 3, 3));
-        basicFunctions.assertEquals(basicFunctions.getListWebElementText(AFTER_GETTING_PRICE, 3, 1), basicFunctions.getListWebElementText(AFTER_GETTING_PRICE, 3, 4));
-        basicFunctions.assertEquals(StringUtils.chop(basicFunctions.getListWebElementText(AFTER_GETTING_PRICE, 3, 2)), name);
-        basicFunctions.assertEquals(from, basicFunctions.getListWebElementText(AFTER_GETTING_PRICE, 3, 0));
-        basicFunctions.assertEquals(to, basicFunctions.getListWebElementText(AFTER_GETTING_PRICE, 3, 1));
+        basicFunctions.assertEquals(basicFunctions.getListWebElementText(AFTER_GETTING_PRICE, 3, 0),
+                basicFunctions.getListWebElementText(AFTER_GETTING_PRICE, 3, 3));
+        basicFunctions.assertEquals(basicFunctions.getListWebElementText(AFTER_GETTING_PRICE, 3, 1),
+                basicFunctions.getListWebElementText(AFTER_GETTING_PRICE, 3, 4));
+        basicFunctions.assertEquals(StringUtils.chop(basicFunctions.getListWebElementText(AFTER_GETTING_PRICE,
+                3, 2)), name);
+        basicFunctions.assertEquals(from, basicFunctions.getListWebElementText(AFTER_GETTING_PRICE,
+                3, 0));
+        basicFunctions.assertEquals(to, basicFunctions.getListWebElementText(AFTER_GETTING_PRICE,
+                3, 1));
     }
 
     public void priceAvailabilityCheck() {
         if (!basicFunctions.getWebElementText(By.id("response")).contains("EUR")) {
             System.out.println("Cenas nav! :(");
         } else {
-            System.out.println("CENA: " + StringUtils.substringBetween(basicFunctions.getWebElementText(By.id("response"))," for ", " EUR ") + " EUR");
+            System.out.println("CENA: " + StringUtils.substringBetween(
+                    basicFunctions.getWebElementText(By.id("response"))," for ", " EUR ") + " EUR");
         }
     }
 
