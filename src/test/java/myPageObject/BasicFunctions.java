@@ -93,6 +93,13 @@ public class BasicFunctions {
     public String getWebElementText(By locator) {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator)).getText();
     }
+//    public String getWebElementText2(By locator) {
+//        return wait.until(ExpectedConditions.presenceOfElementLocated(locator)).getText();
+//    }
+//    public String getWebElementText3(By locator) {
+//        return browser.findElement(locator).getText();
+//    }
+
 
     public void loadElements(By locator, int number) {
         wait.until(ExpectedConditions.numberOfElementsToBe(locator, number));
