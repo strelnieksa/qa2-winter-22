@@ -77,13 +77,21 @@ public class BasicFunctions {
         }
     }
 
+    public List<WebElement> findElemets(By locator) {
+        return browser.findElements(locator);
+    }
+
+    public void findElement(By locator){
+        browser.findElement(locator);
+    }
+
     public String getListWebElementText(By locator, int elementsMoreThan, int index) {
         List<WebElement> we = wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(locator, elementsMoreThan));
         return we.get(index).getText();
     }
 
     public String getWebElementText(By locator) {
-        return browser.findElement(locator).getText();
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator)).getText();
     }
 
     public void loadElements(By locator, int number) {

@@ -1,7 +1,11 @@
 package myPageObject.myPages;
 
 import myPageObject.BasicFunctions;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import java.util.List;
 
 public class MySeatPage {
     private final By LOAD_SEATS = By.xpath(".//div[@class = 'seat']");
@@ -12,9 +16,24 @@ public class MySeatPage {
         this.basicFunctions = basicFunctions;
     }
 
-    public void chooseSeatNumber(int seatNumber){
-       basicFunctions.loadElements(LOAD_SEATS, ALL_SEATS);
-       basicFunctions.chooseWebElement(LOAD_SEATS, String.valueOf(seatNumber));
+    public void chooseSeatNumber(int seatNumber) {
+        basicFunctions.loadElements(LOAD_SEATS, ALL_SEATS);
+       // basicFunctions.chooseWebElement(LOAD_SEATS, String.valueOf(seatNumber));
+
+
+
+
+        List<WebElement> allSeats = basicFunctions.findElemets(LOAD_SEATS);
+        boolean isSeatFound = false;
+        for (WebElement seat : allSeats) {
+            if (seat.getText().equals(String.valueOf(seatNumber))) {
+                isSeatFound = true;
+                basicFunctions.click(seat);
+                break;
+            }
+        }
+        Assertions.assertTrue(isSeatFound, "Seat is not found!");
     }
+
 
 }

@@ -2,15 +2,15 @@ package myPageObject;
 
 import myPageObject.myModel.MyPassenger;
 import myPageObject.myPages.*;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.RandomUtils;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
 
 public class TicketsTestHomeworkByMyself {
     private final String URL = "www.qaguru.lv:8089/tickets";
     final private String FROM_AIRPORT = "VVO";
     final private String TO_AIRPORT = "TNR";
-    final private int SEAT_NUMBER = 27;
+    final private int SEAT_NUMBER = RandomUtils.nextInt(1, 35);
 
     private MyPassenger pasazhieris = new MyPassenger("Alinax", "De May Day",
             "Start1", 1, 0, 3,
@@ -32,7 +32,7 @@ public class TicketsTestHomeworkByMyself {
         registration.fillRegistrationData(pasazhieris);
 
         MyPricePage myPricePage = new MyPricePage(basicFunctions);
-        myPricePage.assertGetPriceData(pasazhieris.getFirstName(),FROM_AIRPORT, TO_AIRPORT);
+        myPricePage.assertGetPriceData(pasazhieris.getFirstName(), FROM_AIRPORT, TO_AIRPORT);
         myPricePage.priceAvailabilityCheck();
         myPricePage.bookPrice();
 
@@ -43,7 +43,8 @@ public class TicketsTestHomeworkByMyself {
         myChoosenSeatPage.assertSeat(SEAT_NUMBER);
 
         MySuccesfulReservationPage end = new MySuccesfulReservationPage(basicFunctions);
-        end.succesfulEndingCheck();
+        Assertions.assertTrue(end.isSuccesfulEndingCheck(), "ERROR!");
+
 
     }
 }
