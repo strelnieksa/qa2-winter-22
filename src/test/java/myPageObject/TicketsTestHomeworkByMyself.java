@@ -43,7 +43,7 @@ public class TicketsTestHomeworkByMyself {
         myChoosenSeatPage.assertSeat(SEAT_NUMBER);
 
         MySuccesfulReservationPage end = new MySuccesfulReservationPage(basicFunctions);
-        Assertions.assertTrue(end.isSuccesfulEndingCheck(), "ERROR!");
+        Assertions.assertTrue(end.isSuccesfulEndingCheck(), "Error - Teksts nesakrīt!!!");
 
 
     }

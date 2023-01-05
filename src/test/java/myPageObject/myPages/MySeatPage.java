@@ -26,7 +26,7 @@ public class MySeatPage {
         List<WebElement> allSeats = basicFunctions.findElemets(LOAD_SEATS);
         boolean isSeatFound = false;
         for (WebElement seat : allSeats) {
-            if (seat.getText().equals(String.valueOf(seatNumber))) {
+            if (basicFunctions.webElementText(seat).equals(String.valueOf(seatNumber))) {
                 isSeatFound = true;
                 basicFunctions.click(seat);
                 break;

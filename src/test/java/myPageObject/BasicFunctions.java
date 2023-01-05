@@ -81,8 +81,8 @@ public class BasicFunctions {
         return browser.findElements(locator);
     }
 
-    public void findElement(By locator){
-        browser.findElement(locator);
+    public WebElement findElement(By locator){
+        return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
     }
 
     public String getListWebElementText(By locator, int elementsMoreThan, int index) {
@@ -119,5 +119,9 @@ public class BasicFunctions {
 
     public void visibilityOfElementLocated(By locator) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
+
+    public String webElementText(WebElement we){
+       return we.getText();
     }
 }
