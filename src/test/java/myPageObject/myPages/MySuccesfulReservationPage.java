@@ -14,7 +14,6 @@ public class MySuccesfulReservationPage {
 
     public boolean isSuccesfulEndingCheck() {
        String textOnPage = basicFunctions.getWebElementText(TNX_TEST);
-       String ASD = basicFunctions.findElement(TNX_TEST).getText();
        return textOnPage.equals(TEXT);
     }
 
