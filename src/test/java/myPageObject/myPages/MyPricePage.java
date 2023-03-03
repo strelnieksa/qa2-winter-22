@@ -2,6 +2,7 @@ package myPageObject.myPages;
 
 import myPageObject.BasicFunctions;
 import org.apache.commons.lang3.StringUtils;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 
 public class MyPricePage {
@@ -18,17 +19,13 @@ public class MyPricePage {
         basicFunctions.click(BOOK_PRICE);
     }
 
-    public void assertGetPriceData(String name, String from, String to) {
+    public void assertGetAirportAndNameData(String name) {
         basicFunctions.assertEquals(basicFunctions.getListWebElementText(AFTER_GETTING_PRICE, 3, 0),
                 basicFunctions.getListWebElementText(AFTER_GETTING_PRICE, 3, 3));
         basicFunctions.assertEquals(basicFunctions.getListWebElementText(AFTER_GETTING_PRICE, 3, 1),
                 basicFunctions.getListWebElementText(AFTER_GETTING_PRICE, 3, 4));
         basicFunctions.assertEquals(StringUtils.chop(basicFunctions.getListWebElementText(AFTER_GETTING_PRICE,
                 3, 2)), name);
-        basicFunctions.assertEquals(from, basicFunctions.getListWebElementText(AFTER_GETTING_PRICE,
-                3, 0));
-        basicFunctions.assertEquals(to, basicFunctions.getListWebElementText(AFTER_GETTING_PRICE,
-                3, 1));
     }
 
     public void priceAvailabilityCheck() {
@@ -38,6 +35,12 @@ public class MyPricePage {
             System.out.println("CENA: " + StringUtils.substringBetween(
                     basicFunctions.getWebElementText(By.id("response"))," for ", " EUR ") + " EUR");
         }
+    }
+
+    public void priceCheckEuro(String prc){
+        String priceCutOut = StringUtils.substringBetween(basicFunctions.getWebElementText(By.id("response"))," for "," EUR ");
+        Assertions.assertEquals(prc, priceCutOut, "Cena nesakrīt!");
+        System.out.println("PRC = " + prc + " un izgrieztais gabals ir = " + priceCutOut);
     }
 
 

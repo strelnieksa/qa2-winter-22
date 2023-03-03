@@ -1,7 +1,7 @@
 package myPageObject.myPages;
 
 import myPageObject.BasicFunctions;
-import myPageObject.myModel.MyPassenger;
+import myPageObject.myModel.MyFlightInfo;
 import org.openqa.selenium.By;
 
 public class MyRegistrationPage {
@@ -10,8 +10,9 @@ public class MyRegistrationPage {
     private final By DISCOUNT = By.id("discount");
     private final By ADULTS = By.id("adults");
     private final By CHILDREN = By.id("children");
-    private final By BUGS = By.id("bugs");
+    private final By BAGS = By.id("bugs");
     private final By FLIGHT = By.id("flight");
+    private final By AFTER_GETTING_PRICE = By.xpath(".//span[@class = 'bTxt']");
     private final By GET_PRICE = By.xpath(".//span[@onclick = 'setLang();']");
 
     private BasicFunctions basicFunctions;
@@ -20,15 +21,26 @@ public class MyRegistrationPage {
         this.basicFunctions = basicFunctions;
     }
 
-    public  void fillRegistrationData(MyPassenger myPassenger){
-        basicFunctions.type(NAME, myPassenger.getFirstName());
-        basicFunctions.type(SURNAME,myPassenger.getLastName());
-        basicFunctions.type(DISCOUNT, myPassenger.getDiscount());
-        basicFunctions.type(ADULTS, myPassenger.getPeopleCount());
-        basicFunctions.type(CHILDREN, myPassenger.getChildCount());
-        basicFunctions.type(BUGS, myPassenger.getBagCount());
-        basicFunctions.selectByText(FLIGHT, myPassenger.getDate());
+    public  void fillRegistrationData(MyFlightInfo info){
+        basicFunctions.type(NAME, info.getPassenger().getFirstName());
+        basicFunctions.type(SURNAME,info.getPassenger().getLastName());
+        basicFunctions.type(DISCOUNT, info.getDiscount());
+        basicFunctions.type(ADULTS, info.getAdultsCount());
+        basicFunctions.type(CHILDREN, info.getChildCount());
+        basicFunctions.type(BAGS, info.getBagsCount());
+        basicFunctions.selectByText(FLIGHT, info.getFlightDate());
+
+    }
+
+    public void getPrice(){
         basicFunctions.click(GET_PRICE);
+    }
+
+    public void airportCheckOnRegistrationPage(String from, String to){
+        basicFunctions.assertEquals(from, basicFunctions.getListWebElementText(AFTER_GETTING_PRICE,
+                0, 0));
+        basicFunctions.assertEquals(to, basicFunctions.getListWebElementText(AFTER_GETTING_PRICE,
+                0, 1));
     }
 
 }

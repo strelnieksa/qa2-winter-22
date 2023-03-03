@@ -22,17 +22,17 @@ public class PassengerInfoPage {
     public PassengerInfoPage(BaseFunc baseFunc){
         this.baseFunc = baseFunc;
     }
-
-    public void fillInPassengerInfo(Passenger passenger){
-        baseFunc.fillReservationForm(NAME, passenger.getFirstName());
-        baseFunc.fillReservationForm(SURNAME, passenger.getLastName());
-        baseFunc.fillReservationForm(DISCOUNT, passenger.getDiscount());
-        baseFunc.fillReservationForm(ADULTS, passenger.getPeopleCount());
-        baseFunc.fillReservationForm(CHILDREN, passenger.getChildCount());
-        baseFunc.fillReservationForm(BUGS, passenger.getBagCount());
-        baseFunc.fillReservationForm(FLIGHT, passenger.getDate());
-
-        baseFunc.click(GET_PRICE_LINK);
-
-    }
+//
+//    public void fillInPassengerInfo(Passenger passenger){
+//        baseFunc.fillReservationForm(NAME, passenger.getFirstName());
+//        baseFunc.fillReservationForm(SURNAME, passenger.getLastName());
+//        baseFunc.fillReservationForm(DISCOUNT, passenger.getDiscount());
+//        baseFunc.fillReservationForm(ADULTS, passenger.getPeopleCount());
+//        baseFunc.fillReservationForm(CHILDREN, passenger.getChildCount());
+//        baseFunc.fillReservationForm(BUGS, passenger.getBagCount());
+//        baseFunc.fillReservationForm(FLIGHT, passenger.getDate());
+//
+//        baseFunc.click(GET_PRICE_LINK);
+//
+//    }
 }

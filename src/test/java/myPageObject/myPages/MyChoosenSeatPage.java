@@ -16,6 +16,10 @@ public class MyChoosenSeatPage {
         int seatCheck = Integer.parseInt(StringUtils.getDigits(basicFunctions.getWebElementText(SEAT_CHECK)));
         basicFunctions.assertEquals(seat,seatCheck);
         System.out.println("Izvēlētā vieta: " + seat + "\n" + "Rezervētā vieta: " + seatCheck);
+
+    }
+
+    public void bookSeat(){
         basicFunctions.click(By.id("book3"));
     }
 
